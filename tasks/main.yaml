@@ -1,0 +1,22 @@
+- name: Install Pipx
+  shell: |
+    if ! {{ pipx_default_python }} -m pip list --format freeze | grep -q pipx=={{ pipx_version }}; then
+      {{ pipx_default_python }} -m pip install pipx=={{ pipx_version }}
+
+      if ! {{ pipx_default_python }} -m pip list --format freeze | grep -q pipx=={{ pipx_version }}; then
+        exit 1
+      else
+        echo status=changed
+      fi
+    fi
+  register: task
+  changed_when: "'status=changed' in task.stdout"
+
+- name: Add init block to ~/.profile
+  blockinfile:
+    path: ~/.profile
+    insertafter: EOF
+    state: present
+    marker: "# {mark} :: ANSIBLE MANAGED BLOCK :: {{ role_name }} :: PIPX_DEFAULT_PATH"
+    block: |
+      export PIPX_DEFAULT_PATH={{ pipx_default_python }}

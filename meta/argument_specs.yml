@@ -1,0 +1,17 @@
+argument_specs:
+  main:
+    short_description: Main entry point for the "{{ role_name }}" role
+    options:
+      pipx_version:
+        default: 0.16.3
+        type: raw
+        required: false
+        description: >-
+          Pipx version to install.
+
+      pipx_default_python:
+        default: python
+        type: raw
+        required: false
+        description: >-
+          Overrides default python used for commands.
