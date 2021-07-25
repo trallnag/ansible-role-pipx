@@ -42,7 +42,7 @@ pipx_default_python:
   vars:
     rolespec_validate: true
   roles:
-    - name: trallnag.poetry
+    - name: trallnag.pipx
       vars:
         pipx_version: 0.16.3
         pipx_default_python: python
