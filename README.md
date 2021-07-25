@@ -1,6 +1,6 @@
-[![role](https://img.shields.io/ansible/role/55573)](https://galaxy.ansible.com/trallnag/pipx)
-[![quality](https://img.shields.io/ansible/quality/55573)](https://galaxy.ansible.com/trallnag/pipx)
-[![downloads](https://img.shields.io/ansible/role/d/55573?label=downloads)](https://galaxy.ansible.com/trallnag/pipx)
+[![role](https://img.shields.io/ansible/role/55767)](https://galaxy.ansible.com/trallnag/pipx)
+[![quality](https://img.shields.io/ansible/quality/55767)](https://galaxy.ansible.com/trallnag/pipx)
+[![downloads](https://img.shields.io/ansible/role/d/55767?label=downloads)](https://galaxy.ansible.com/trallnag/pipx)
 
 # Ansible Role for Pipx
 
@@ -30,7 +30,14 @@ pipx_default_python:
   type: raw
   required: false
   description: >-
-    Overrides default python used for commands.
+    Overrides default python used for commands. Check PIPX_DEFAULT_PYTHON.
+
+pipx_python_path_installer:
+  default: python
+  type: raw
+  required: false
+  description: >-
+    Python used for installation.
 ```
 
 ## Example Playbook
@@ -46,6 +53,7 @@ pipx_default_python:
       vars:
         pipx_version: 0.16.3
         pipx_default_python: python
+        pipx_python_path_installer: python
 ```
 
 ## Special Requirements

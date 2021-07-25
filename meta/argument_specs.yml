@@ -14,4 +14,11 @@ argument_specs:
         type: raw
         required: false
         description: >-
-          Overrides default python used for commands.
+          Overrides default python used for commands. Check PIPX_DEFAULT_PYTHON.
+
+      pipx_python_path_installer:
+        default: python
+        type: raw
+        required: false
+        description: >-
+          Python used for installation.

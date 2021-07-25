@@ -1,13 +1,17 @@
 - name: Install Pipx
   shell: |
-    if ! {{ pipx_default_python }} -m pip list --format freeze | grep -q pipx=={{ pipx_version }}; then
-      {{ pipx_default_python }} -m pip install pipx=={{ pipx_version }}
+    if ! {{ pipx_python_path_installer }} -m pip list --format freeze | grep -q pipx=={{ pipx_version }}; then
+      {{ pipx_python_path_installer }} -m pip install pipx=={{ pipx_version }}
 
-      if ! {{ pipx_default_python }} -m pip list --format freeze | grep -q pipx=={{ pipx_version }}; then
+      if ! {{ pipx_python_path_installer }} -m pip list --format freeze | grep -q pipx=={{ pipx_version }}; then
         exit 1
       else
         echo status=changed
       fi
+    fi
+
+    if ! {{ pipx_python_path_installer }} -m pip list --format freeze | grep -q pipx=={{ pipx_version }}; then
+      exit 1
     fi
   register: task
   changed_when: "'status=changed' in task.stdout"
@@ -20,3 +24,4 @@
     marker: "# {mark} :: ANSIBLE MANAGED BLOCK :: {{ role_name }} :: PIPX_DEFAULT_PATH"
     block: |
       export PIPX_DEFAULT_PATH={{ pipx_default_python }}
+      eval "$(register-python-argcomplete pipx)"

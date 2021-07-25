@@ -11,6 +11,13 @@ specification.
 
 * Nothing.
 
+## [1.1.0] 2021-07-25
+
+### Added
+
+* Var to set installer python and python used for commands.
+* Bash completion.
+
 ## [1.0.0] 2021-07-07
 
 * Intial release.
