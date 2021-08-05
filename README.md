@@ -23,21 +23,23 @@ pipx_version:
   type: raw
   required: false
   description: >-
-    Pipx version to install.
+    Pipx version to install. Check here: <https://github.com/pypa/pipx>.
 
 pipx_default_python:
   default: python
   type: raw
   required: false
   description: >-
-    Overrides default python used for commands. Check PIPX_DEFAULT_PYTHON.
+    Overrides default python used for commands by setting environment
+    variable PIPX_DEFAULT_PYTHON. Check here:
+    <https://pypa.github.io/pipx/docs/>.
 
 pipx_python_path_installer:
   default: python
   type: raw
   required: false
   description: >-
-    Python used for installation.
+    Python used for installation. pipx docs recommend using system Python.
 ```
 
 ## Example Playbook
