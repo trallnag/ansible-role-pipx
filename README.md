@@ -26,7 +26,7 @@ pipx_version:
     Pipx version to install. Check here: <https://github.com/pypa/pipx>.
 
 pipx_default_python:
-  default: python
+  default: /usr/bin/python
   type: raw
   required: false
   description: >-
@@ -35,7 +35,7 @@ pipx_default_python:
     <https://pypa.github.io/pipx/docs/>.
 
 pipx_python_path_installer:
-  default: python
+  default: /usr/bin/python
   type: raw
   required: false
   description: >-

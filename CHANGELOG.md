@@ -11,6 +11,13 @@ specification.
 
 * Nothing.
 
+## [2.0.0] 2021-08-05
+
+### Changed
+
+* Improved docs.
+* **BREAKING:** Change defaults to system Python.
+
 ## [1.1.0] 2021-07-25
 
 ### Added
@@ -21,7 +28,3 @@ specification.
 ## [1.0.0] 2021-07-07
 
 * Intial release.
-
-## Unreleased
-
-* Nothing.
